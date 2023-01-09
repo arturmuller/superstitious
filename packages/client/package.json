@@ -1,0 +1,13 @@
+{
+  "name": "@superstitious/client",
+  "version": "0.0.0",
+  "description": "Trust your API.",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Artur Muller",
+  "license": "MIT",
+  "dependencies": {
+    "@superstitious/core": "^0.0.0"
+  }
+}

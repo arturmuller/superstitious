@@ -1,0 +1,16 @@
+{
+  "name": "@superstitious/next",
+  "version": "0.0.0",
+  "description": "Trust your API.",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Artur Muller",
+  "license": "MIT",
+  "peerDependencies": {
+    "next": "^13.0.0 || ^12.0.0"
+  },
+  "dependencies": {
+    "@superstitious/core": "^0.0.0"
+  }
+}
