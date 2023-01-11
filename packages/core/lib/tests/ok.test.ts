@@ -5,10 +5,10 @@ describe("Returns response object", () => {
     const result = ok("DONE", { hello: "world" });
 
     expect(result).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "DONE",
         "ok": true,
-        "payload": Object {
+        "payload": {
           "hello": "world",
         },
       }
@@ -19,7 +19,7 @@ describe("Returns response object", () => {
     const result = ok("DONE");
 
     expect(result).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "DONE",
         "ok": true,
       }

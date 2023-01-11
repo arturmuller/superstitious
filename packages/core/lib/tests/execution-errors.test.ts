@@ -20,12 +20,12 @@ describe("Returns NOT_IMPLEMENTED", () => {
     });
 
     expect(response).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "APPLICATION_ERROR",
         "name": "XXX",
         "ok": false,
-        "payload": Object {
-          "message": "An action with the name \\"XXX\\" was not found.",
+        "payload": {
+          "message": "An action with the name "XXX" was not found.",
         },
       }
     `);
@@ -41,11 +41,11 @@ describe("Returns INVALID_CONTEXT", () => {
     });
 
     expect(response).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "APPLICATION_ERROR",
         "name": "GET_USER",
         "ok": false,
-        "payload": Object {
+        "payload": {
           "message": "Action context did not pass validation. At path: auth_user_id -- Expected a string, but received: 1",
         },
       }
@@ -62,11 +62,11 @@ describe("Returns INVALID_CONTEXT", () => {
     });
 
     expect(response).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "APPLICATION_ERROR",
         "name": "GET_USER",
         "ok": false,
-        "payload": Object {
+        "payload": {
           "message": "Action payload did not pass validation. At path: user_id -- Expected a string, but received: 1",
         },
       }
@@ -94,11 +94,11 @@ describe("Returns INVALID_CONTEXT", () => {
     });
 
     expect(response).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "APPLICATION_ERROR",
         "name": "GET_USER",
         "ok": false,
-        "payload": Object {
+        "payload": {
           "message": "An error was thrown inside of an action resolver. Cannot read properties of undefined (reading 'x')",
         },
       }
@@ -123,11 +123,11 @@ describe("Returns INVALID_CONTEXT", () => {
     });
 
     expect(response).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "APPLICATION_ERROR",
         "name": "GET_USER",
         "ok": false,
-        "payload": Object {
+        "payload": {
           "message": "A non-error was thrown inside of an action resolver. This is not an instance of Error.",
         },
       }
@@ -159,9 +159,9 @@ describe("create executor", () => {
     });
 
     expect(() =>
-      createExecutor([a, a, a, b, b, c]),
+      createExecutor([a, a, a, b, b, c])
     ).toThrowErrorMatchingInlineSnapshot(
-      `"Duplicate action names were supplied to \\"createExecutor\\" function. \\"A\\" used 3x, \\"B\\" used 2x"`,
+      `"Duplicate action names were supplied to "createExecutor" function. "A" used 3x, "B" used 2x."`
     );
   });
 });

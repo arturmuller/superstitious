@@ -21,7 +21,7 @@ describe("Returns correct payload", () => {
     });
 
     expect(result).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "RETRIEVED",
         "name": "GREET",
         "ok": true,
@@ -50,11 +50,11 @@ describe("Validates context", () => {
     });
 
     expect(result).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "APPLICATION_ERROR",
         "name": "GREET",
         "ok": false,
-        "payload": Object {
+        "payload": {
           "message": "Action context did not pass validation. Expected an object, but received: 1",
         },
       }
@@ -79,11 +79,11 @@ describe("Validates context", () => {
     });
 
     expect(result).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "RETRIEVED",
         "name": "GREET",
         "ok": true,
-        "payload": "Hello: {\\"name\\":\\"World\\"}",
+        "payload": "Hello: {"name":"World"}",
       }
     `);
   });
@@ -108,11 +108,11 @@ describe("Validates payload", () => {
     });
 
     expect(result).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "APPLICATION_ERROR",
         "name": "GREET",
         "ok": false,
-        "payload": Object {
+        "payload": {
           "message": "Action payload did not pass validation. Expected an object, but received: 1",
         },
       }
@@ -137,11 +137,11 @@ describe("Validates payload", () => {
     });
 
     expect(result).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "APPLICATION_ERROR",
         "name": "GREET",
         "ok": false,
-        "payload": Object {
+        "payload": {
           "message": "Action payload did not pass validation. At path: size -- Expected a value of type \`never\`, but received: \`6371\`",
         },
       }
@@ -151,11 +151,12 @@ describe("Validates payload", () => {
 
 describe("Calls resolve function", () => {
   test("when action is exectued.", async () => {
-    const resolve = jest.fn(async (input: { context: string, payload: string}) =>
-      ok(
-        "RETRIEVED",
-        `Hello ${input.payload} -- a greeting by ${input.context}`,
-      ),
+    const resolve = jest.fn(
+      async (input: { context: string; payload: string }) =>
+        ok(
+          "RETRIEVED",
+          `Hello ${input.payload} -- a greeting by ${input.context}`
+        )
     );
 
     const greet = defineAction({

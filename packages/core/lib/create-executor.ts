@@ -20,7 +20,7 @@ function createLookupTable(actions: AnyAction[]) {
     const hint = explainDuplicates(duplicates);
 
     throw new Error(
-      `Duplicate action names were supplied to "createExecutor" function. ${hint}`,
+      `Duplicate action names were supplied to "createExecutor" function. ${hint}.`,
     );
   }
 

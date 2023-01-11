@@ -5,10 +5,10 @@ describe("Returns response object", () => {
     const result = fail("BOOM", { message: "This blew up..." });
 
     expect(result).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "BOOM",
         "ok": false,
-        "payload": Object {
+        "payload": {
           "message": "This blew up...",
         },
       }
@@ -19,7 +19,7 @@ describe("Returns response object", () => {
     const result = fail("BOOM");
 
     expect(result).toMatchInlineSnapshot(`
-      Object {
+      {
         "code": "BOOM",
         "ok": false,
       }
