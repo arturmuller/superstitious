@@ -2,6 +2,8 @@
   "name": "@superstitious/client",
   "version": "0.0.0",
   "description": "Trust your API.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest"
   },

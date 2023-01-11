@@ -1,7 +1,7 @@
 import { object, string } from "superstruct";
-import { defineAction } from "../lib/action";
-import { createExecutor } from "../lib/create-executor";
-import { ok } from "../lib/result";
+import { defineAction } from "../action";
+import { createExecutor } from "../create-executor";
+import { ok } from "../result";
 
 describe("Returns correct payload", () => {
   test("when action request is provided.", async () => {

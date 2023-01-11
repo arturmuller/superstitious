@@ -1,27 +1,27 @@
-import { ok } from "../lib/result";
+import { fail } from "../result";
 
 describe("Returns response object", () => {
   test("when payload is provided", async () => {
-    const result = ok("DONE", { hello: "world" });
+    const result = fail("BOOM", { message: "This blew up..." });
 
     expect(result).toMatchInlineSnapshot(`
       Object {
-        "code": "DONE",
-        "ok": true,
+        "code": "BOOM",
+        "ok": false,
         "payload": Object {
-          "hello": "world",
+          "message": "This blew up...",
         },
       }
     `);
   });
 
   test("when payload is not provided", async () => {
-    const result = ok("DONE");
+    const result = fail("BOOM");
 
     expect(result).toMatchInlineSnapshot(`
       Object {
-        "code": "DONE",
-        "ok": true,
+        "code": "BOOM",
+        "ok": false,
       }
     `);
   });

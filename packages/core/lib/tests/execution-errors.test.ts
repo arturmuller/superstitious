@@ -1,7 +1,7 @@
 import { any, object, string } from "superstruct";
-import { createExecutor } from "../lib/create-executor";
-import { ok } from "../lib/result";
-import { defineAction } from "../lib/action";
+import { createExecutor } from "../create-executor";
+import { ok } from "../result";
+import { defineAction } from "../action";
 
 const getUser = defineAction({
   name: "GET_USER",

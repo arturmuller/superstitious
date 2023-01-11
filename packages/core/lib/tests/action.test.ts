@@ -1,7 +1,7 @@
 import type { Infer } from "superstruct";
 import { number, object, string } from "superstruct";
-import { defineAction } from "../lib/action";
-import { ok } from "../lib/result";
+import { defineAction } from "../action";
+import { ok } from "../result";
 
 describe("Returns action object", () => {
   test("when all props supplied", async () => {
