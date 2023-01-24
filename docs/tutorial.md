@@ -12,16 +12,20 @@ cd tutorial # Navigates to the `tutorial` directory
 npm install superstruct superstitious # Installs dependencies
 ```
 
-Once we have this out of the way, we can start with Superstitious. Let's start by creating our action definitions. These are the absolute core of the library and the basis of your future inferred type definitions.
+Once we have this out of the way, we can start with Superstitious. Let's start by creating our action definitions. These are the core of the library and the basis of your future inferred type definitions.
 
-We will create a file called `actions.ts` in a new directory `server` and open it up. For starters, we will write a super simple action `PING` that just returns `PONG` upon success.
+We will create a file called `rpc.ts` in the `pages/api` directory and open it up. For starters, we will write a super simple action `PING` that just returns `PONG` upon success.
 
 ```ts
-// server/actions.ts
+// pages/api/rpc.ts
 
 import { defineAction, ok } from "superstitious";
 
 const ping = defineAction("PING", () => ok("PONG"));
 ```
 
-Open that the actions
+Action definitions don't do anything by themselves. To make them executable, you have to pass them to an executor.
+
+```ts
+const executor = createExecutor([ping])
+``` 
